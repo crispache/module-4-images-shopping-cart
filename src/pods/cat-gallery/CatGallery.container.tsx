@@ -1,8 +1,11 @@
 import React from "react";
+import { CatGallery } from "./CatGallery.component";
+import { CATS_IMAGES_MOCKS } from "./mocks";
 
 
 export const CatGalleryContainer: React.FC = () => {
-    return (<>
-        <h2> Listado de gatos </h2>
+    return (
+    <>
+        <CatGallery images={CATS_IMAGES_MOCKS}/>
     </>)
 }
