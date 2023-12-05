@@ -1,2 +1,2 @@
 export * from './cats-list';
-export * from './dogs-list';
+export * from './dog-gallery';
