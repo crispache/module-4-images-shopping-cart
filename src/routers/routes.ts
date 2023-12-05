@@ -1,12 +1,12 @@
 
 interface SwitchRoutes {
   root: string;
-  dogsList: string;
-  catsList: string;
+  dogGallery: string;
+  catGallery: string;
 }
 
 export const routes: SwitchRoutes = {
   root: "/",
-  dogsList: "list/dogs",
-  catsList: "list/cats"
+  dogGallery: "gallery/dogs",
+  catGallery: "gallery/cats"
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export const CatsListContainer: React.FC = () => {
+export const CatGalleryContainer: React.FC = () => {
     return (<>
         <h2> Listado de gatos </h2>
     </>)

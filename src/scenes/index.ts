@@ -1,2 +1,2 @@
-export * from './CatsList.scene';
-export * from './DogsList.scene';
+export * from './CatGallery.scene';
+export * from './DogGallery.scene';
