@@ -11,7 +11,7 @@ export const DogGallery: React.FC<Props> = (props) => {
 
   return (
     <>
-      <DogGalleryHeader />
+    {/*   <DogGalleryHeader /> */}
       <div className="card-image-list">
         {images.map((image) => (
           <DogGalleryItem key={image.id} image={image} />

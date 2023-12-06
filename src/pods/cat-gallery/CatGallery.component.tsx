@@ -11,7 +11,7 @@ export const CatGallery: React.FC<Props> = (props) => {
 
   return (
     <>
-      <CatGalleryHeader />
+     {/*  <CatGalleryHeader /> */}
       <div className="card-image-list">
         {images.map((image) => (
           <CatGalleryItem key={image.id} image={image} />
