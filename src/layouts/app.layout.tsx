@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { routes } from "@/routers";
+import { GalleryContext } from "@/core";
 
 interface Props {
   children: React.ReactNode;
@@ -18,14 +19,14 @@ interface Props {
 type TypeGallery = "dog" | "cat";
 
 export const AppLayout: React.FC<Props> = ({ children }) => {
-  const [selectedGallery, setSelectedGallery] = useState<TypeGallery>("dog");
+  const { gallery, setGallery } = React.useContext(GalleryContext);
   const navigate = useNavigate();
 
   const handelChange = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
     value: TypeGallery
   ) => {
-    setSelectedGallery(value);
+    setGallery(value);
   };
 
   return (
@@ -45,7 +46,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
               exclusive
               size="large"
               fullWidth
-              value={selectedGallery}
+              value={gallery}
               onChange={handelChange}
             >
               <ToggleButton
