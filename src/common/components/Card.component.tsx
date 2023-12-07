@@ -11,10 +11,19 @@ import {
 interface Props {
   title: string;
   imgUrl: string;
+  isChecked: boolean;
+  onChangeCheck: (isChecked: boolean) => void;
 }
 
 export const CardComponent: React.FC<Props> = (props) => {
-  const { title, imgUrl } = props;
+  const { title, imgUrl, isChecked, onChangeCheck } = props;
+
+  const onChangeCheckbox = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean
+  ) => {
+    onChangeCheck(checked);
+  };
 
   return (
     <Card sx={{ width: 345, height: 385 }} variant="outlined">
@@ -26,10 +35,15 @@ export const CardComponent: React.FC<Props> = (props) => {
         alt="Foto"
       />
       <CardContent>
-        <Typography variant="h6">{title}</Typography>
+        <Typography variant="h6">{title} </Typography>
       </CardContent>
       <CardActions>
-        <Checkbox color="primary" size="medium" />
+        <Checkbox
+          checked={isChecked}
+          color="primary"
+          size="medium"
+          onChange={onChangeCheckbox}
+        />
       </CardActions>
     </Card>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
@@ -7,10 +7,13 @@ import {
   Toolbar,
   ToggleButtonGroup,
   ToggleButton,
+  IconButton,
+  Badge,
 } from "@mui/material";
+import { ShoppingCart } from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
 import { routes } from "@/routers";
-import { GalleryContext } from "@/core";
+import { CartContext, GalleryContext } from "@/core";
 
 interface Props {
   children: React.ReactNode;
@@ -20,6 +23,7 @@ type TypeGallery = "dog" | "cat";
 
 export const AppLayout: React.FC<Props> = ({ children }) => {
   const { gallery, setGallery } = React.useContext(GalleryContext);
+  const { cartInfo } = React.useContext(CartContext);
   const navigate = useNavigate();
 
   const handelChange = (
@@ -33,9 +37,14 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
     <>
       <AppBar position="static" color="transparent">
         <Toolbar>
-          <Typography variant="h6" component="div" noWrap>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             App Gallery
           </Typography>
+          <IconButton size="medium">
+            <Badge badgeContent={cartInfo?.length} color="primary">
+              <ShoppingCart />
+            </Badge>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <main>
