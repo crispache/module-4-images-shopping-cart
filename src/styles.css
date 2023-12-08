@@ -17,3 +17,20 @@
 .header-list {
   margin-top: 30px;
 }
+
+
+.cart-container {
+  width: 450px;
+  height: 100%;
+  padding: 15px 32px 35px 32px;
+}
+
+.title-cart {
+  margin-bottom: 20px;
+}
+
+
+.close-button {
+  display: flex;
+  justify-content: end;
+}

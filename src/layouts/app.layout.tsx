@@ -14,6 +14,7 @@ import { ShoppingCart } from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
 import { routes } from "@/routers";
 import { CartContext, GalleryContext } from "@/core";
+import { Cart } from "@/common";
 
 interface Props {
   children: React.ReactNode;
@@ -25,6 +26,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
   const { gallery, setGallery } = React.useContext(GalleryContext);
   const { cartInfo } = React.useContext(CartContext);
   const navigate = useNavigate();
+  const [isOpenDrawer, setIsOpenDrawer] = React.useState<boolean>(false)
 
   const handelChange = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
@@ -40,7 +42,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             App Gallery
           </Typography>
-          <IconButton size="medium">
+          <IconButton size="medium" onClick={() => setIsOpenDrawer(true) }>
             <Badge badgeContent={cartInfo?.length} color="primary">
               <ShoppingCart />
             </Badge>
@@ -77,6 +79,8 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
             {children}
           </Box>
         </Container>
+
+        <Cart isOpen={isOpenDrawer} closeDrawer={() => setIsOpenDrawer(false)}></Cart>
       </main>
     </>
   );

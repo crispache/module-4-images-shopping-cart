@@ -17,7 +17,7 @@ export const DogGalleryItem: React.FC<Props> = (props) => {
   React.useEffect(() => {
     const isCartAdded = cartInfo.some((item) => item.id === image.id);
     setInfo(isCartAdded);
-  }, []);
+  }, [cartInfo]);
 
   const onChangeCheck = (isChecked: boolean) => {
     setInfo(isChecked);
