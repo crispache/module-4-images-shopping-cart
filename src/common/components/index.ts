@@ -1,2 +1,2 @@
 export * from './Card.component';
-export * from './Cart.component';
+export * from './cart';

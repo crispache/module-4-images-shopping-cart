@@ -26,7 +26,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
   const { gallery, setGallery } = React.useContext(GalleryContext);
   const { cartInfo } = React.useContext(CartContext);
   const navigate = useNavigate();
-  const [isOpenDrawer, setIsOpenDrawer] = React.useState<boolean>(false)
+  const [isOpenCartPanel, setIsOpenCartPanel] = React.useState<boolean>(false)
 
   const handelChange = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
@@ -42,7 +42,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             App Gallery
           </Typography>
-          <IconButton size="medium" onClick={() => setIsOpenDrawer(true) }>
+          <IconButton size="medium" onClick={() => setIsOpenCartPanel(true) }>
             <Badge badgeContent={cartInfo?.length} color="primary">
               <ShoppingCart />
             </Badge>
@@ -80,7 +80,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
           </Box>
         </Container>
 
-        <Cart isOpen={isOpenDrawer} closeDrawer={() => setIsOpenDrawer(false)}></Cart>
+        <Cart isOpen={isOpenCartPanel} closeCartPanel={() => setIsOpenCartPanel(false)}></Cart>
       </main>
     </>
   );

@@ -12,7 +12,7 @@ export const CatGallery: React.FC<Props> = (props) => {
   return (
     <>
      {/*  <CatGalleryHeader /> */}
-      <div className="card-image-list">
+      <div className="list-card-image">
         {images.map((image) => (
           <CatGalleryItem key={image.id} image={image} />
         ))}
