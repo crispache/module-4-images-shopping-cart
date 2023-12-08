@@ -30,9 +30,11 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
 
   const handelChange = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
-    value: TypeGallery
-  ) => {
-    setGallery(value);
+    value: TypeGallery | null
+  ) => { 
+    if(value !== null) {
+      setGallery(value);
+    }
   };
 
   return (
