@@ -1,9 +1,9 @@
 import React from "react";
-import { CartActionsReducer, CartInfo } from "./cart.vm";
+import { CartActionsReducer, CartProduct } from "./cart.vm";
 
 
 interface CartContextModel {
-  cartInfo: CartInfo[];
+  cartProducts: CartProduct[];
   dispatchCartActions: React.Dispatch<CartActionsReducer>;
 }
 

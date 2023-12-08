@@ -11,7 +11,7 @@ interface Props {
 
 export const Cart: React.FC<Props> = (props) => {
   const { isOpen, closeCartPanel } = props;
-  const { cartInfo, dispatchCartActions } = React.useContext(CartContext);
+  const { cartProducts, dispatchCartActions } = React.useContext(CartContext);
 
   const deleteCartProduct = (product: CartProduct) => {
     dispatchCartActions({ type: "delete", payload: product });
@@ -22,17 +22,17 @@ export const Cart: React.FC<Props> = (props) => {
       <Drawer open={isOpen} onClose={closeCartPanel} anchor="right">
         <div className="cart-container">
           <CartHeader
-            totalCartProducts={cartInfo?.length}
+            totalCartProducts={cartProducts?.length}
             closeCartPanel={closeCartPanel}
           />
 
           <Divider />
 
-          {cartInfo?.length === 0 ? (
+          {cartProducts?.length === 0 ? (
             <CartEmpty />
           ) : (
             <CartList
-              cartProducts={cartInfo}
+              cartProducts={cartProducts}
               deleteCartProduct={deleteCartProduct}
             />
           )}

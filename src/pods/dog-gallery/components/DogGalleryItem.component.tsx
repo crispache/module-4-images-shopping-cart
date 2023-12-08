@@ -11,13 +11,13 @@ interface Props {
 export const DogGalleryItem: React.FC<Props> = (props) => {
   const { image } = props;
   const [isSelected, setInfo] = React.useState<boolean>(props.image.isSelected);
-  const { cartInfo, dispatchCartActions } = React.useContext(CartContext);
+  const { cartProducts, dispatchCartActions } = React.useContext(CartContext);
 
   // TODO: Lógica repetida* se podría reutilizar de alguna forma
   React.useEffect(() => {
-    const isCartAdded = cartInfo.some((item) => item.id === image.id);
+    const isCartAdded = cartProducts.some((item) => item.id === image.id);
     setInfo(isCartAdded);
-  }, [cartInfo]);
+  }, [cartProducts]);
 
   const onChangeCheck = (isChecked: boolean) => {
     setInfo(isChecked);

@@ -1,9 +1,9 @@
 import React from "react";
 import { CartContext } from "./cart.context";
-import { CartActionsReducer, CartInfo } from "./cart.vm";
+import { CartActionsReducer, CartProduct } from "./cart.vm";
 
 
-const cartInfoReducer = (state: CartInfo[], action: CartActionsReducer): Array<CartInfo> => {
+const cartInfoReducer = (state: CartProduct[], action: CartActionsReducer): Array<CartProduct> => {
   switch (action.type) {
     case "add":
       return [
@@ -26,13 +26,13 @@ interface Props {
 }
 
 export const CartProvider: React.FC<Props> = ({ children }) => {
-  const [cartInfo, dispatch] = React.useReducer(cartInfoReducer, []);
+  const [cartProducts, dispatch] = React.useReducer(cartInfoReducer, []);
 
   return (
     <>
       <CartContext.Provider
         value={{
-          cartInfo: cartInfo,
+          cartProducts,
           dispatchCartActions: dispatch,
         }}
       >

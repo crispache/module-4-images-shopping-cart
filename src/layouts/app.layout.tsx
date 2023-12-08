@@ -24,7 +24,7 @@ type TypeGallery = "dog" | "cat";
 
 export const AppLayout: React.FC<Props> = ({ children }) => {
   const { gallery, setGallery } = React.useContext(GalleryContext);
-  const { cartInfo } = React.useContext(CartContext);
+  const { cartProducts } = React.useContext(CartContext);
   const navigate = useNavigate();
   const [isOpenCartPanel, setIsOpenCartPanel] = React.useState<boolean>(false)
 
@@ -43,7 +43,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
             App Gallery
           </Typography>
           <IconButton size="medium" onClick={() => setIsOpenCartPanel(true) }>
-            <Badge badgeContent={cartInfo?.length} color="primary">
+            <Badge badgeContent={cartProducts?.length} color="primary">
               <ShoppingCart />
             </Badge>
           </IconButton>
