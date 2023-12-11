@@ -25,9 +25,8 @@ type TypeGallery = "dog" | "cat";
 // TODO: Se podría hacer más pequeña la componente
 export const AppLayout: React.FC<Props> = ({ children }) => {
   const { gallery, setGallery } = React.useContext(GalleryContext);
-  const { cartProducts } = React.useContext(CartContext);
+  const { cartProducts, isShowCart, setIsShowCart} = React.useContext(CartContext);
   const navigate = useNavigate();
-  const [isOpenCartPanel, setIsOpenCartPanel] = React.useState<boolean>(true)
 
   const handelChange = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
@@ -45,7 +44,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             App Gallery
           </Typography>
-          <IconButton size="medium" onClick={() => setIsOpenCartPanel(true) }>
+          <IconButton size="medium" onClick={() => setIsShowCart(true) }>
             <Badge badgeContent={cartProducts?.length} color="primary">
               <ShoppingCart />
             </Badge>
@@ -83,7 +82,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
           </Box>
         </Container>
 
-        <Cart isOpen={isOpenCartPanel} closeCartPanel={() => setIsOpenCartPanel(false)}></Cart>
+        <Cart isOpen={isShowCart} closeCartPanel={() => setIsShowCart(false)}></Cart>
       </main>
     </>
   );

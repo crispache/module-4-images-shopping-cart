@@ -27,6 +27,7 @@ interface Props {
 
 export const CartProvider: React.FC<Props> = ({ children }) => {
   const [cartProducts, dispatch] = React.useReducer(cartInfoReducer, []);
+  const [isShowCart, setIsShowCart] = React.useState<boolean>(true);
 
   return (
     <>
@@ -34,6 +35,8 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
         value={{
           cartProducts,
           dispatchCartActions: dispatch,
+          isShowCart,
+          setIsShowCart
         }}
       >
         {children}
