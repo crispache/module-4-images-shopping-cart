@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 
 interface Props {}
 
-export const DogGalleryHeader: React.FC<Props> = () => {
+export const DogGalleryHeader: React.FC<Props> = React.memo(() => {
   return (
     <>
       <div className="list-header">
@@ -14,4 +14,4 @@ export const DogGalleryHeader: React.FC<Props> = () => {
       </div>
     </>
   );
-};
+});

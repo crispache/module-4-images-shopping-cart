@@ -4,7 +4,7 @@ import { CartDialogDeleteProduct } from "./CartDialogDeleteProduct.component";
 
 interface Props {}
 
-export const CartFooter: React.FC<Props> = (props) => {
+export const CartFooter: React.FC<Props> = React.memo(() => {
   const [isOpenDialog, setIsOpenDialog] = React.useState<boolean>(false);
 
   return (
@@ -27,4 +27,4 @@ export const CartFooter: React.FC<Props> = (props) => {
       />
     </div>
   );
-};
+});

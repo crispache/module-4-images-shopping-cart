@@ -13,7 +13,7 @@ export const DogGalleryItem: React.FC<Props> = (props) => {
   const [isSelected, setInfo] = React.useState<boolean>(props.image.isSelected);
   const { cartProducts, dispatchCartActions } = React.useContext(CartContext);
 
-  // TODO: Lógica repetida* se podría reutilizar de alguna forma
+  // TODO: Lógica repetida* se podría reutilizar custom hook
   React.useEffect(() => {
     const isCartAdded = cartProducts.some((item) => item.id === image.id);
     setInfo(isCartAdded);

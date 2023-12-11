@@ -22,6 +22,7 @@ interface Props {
 
 type TypeGallery = "dog" | "cat";
 
+// TODO: Se podría hacer más pequeña la componente
 export const AppLayout: React.FC<Props> = ({ children }) => {
   const { gallery, setGallery } = React.useContext(GalleryContext);
   const { cartProducts } = React.useContext(CartContext);
