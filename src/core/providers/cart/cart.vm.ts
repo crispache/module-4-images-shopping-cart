@@ -8,5 +8,5 @@ export interface CartProduct {
 
 export interface CartActionsReducer {
     type: "add" | "delete" | "empty";
-    payload: CartProduct;
+    payload?: CartProduct;
 }

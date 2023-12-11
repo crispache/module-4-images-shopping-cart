@@ -22,7 +22,7 @@
 .cart-container {
   width: 400px;
   height: 100%;
-  padding: 15px 30px 35px 30px;
+  padding: 15px 30px 50px 30px;
 }
 
 .cart-header {
@@ -40,4 +40,10 @@
   margin-top: 50px;
   min-height: 300px;
   text-align: center;
+}
+
+.cart-footer {
+  position: absolute;
+  bottom: 30px;
+  width: 350px;
 }

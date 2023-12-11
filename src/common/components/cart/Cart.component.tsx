@@ -1,7 +1,7 @@
 import React from "react";
 import { Divider, Drawer } from "@mui/material";
 import { CartContext } from "@/core";
-import { CartEmpty, CartHeader, CartList } from "./components";
+import { CartEmpty, CartFooter, CartHeader, CartList } from "./components";
 import { CartProduct } from "./Cart.vm";
 
 interface Props {
@@ -31,10 +31,13 @@ export const Cart: React.FC<Props> = (props) => {
           {cartProducts?.length === 0 ? (
             <CartEmpty />
           ) : (
-            <CartList
-              cartProducts={cartProducts}
-              deleteCartProduct={deleteCartProduct}
-            />
+            <>
+              <CartList
+                cartProducts={cartProducts}
+                deleteCartProduct={deleteCartProduct}
+              />
+              <CartFooter />
+            </>
           )}
         </div>
       </Drawer>
