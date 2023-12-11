@@ -34,6 +34,8 @@
 
 .cart-list {
   margin: 20px 0px;
+  height: calc(100% - 200px);
+  overflow-y: auto;
 }
 
 .cart-empty {
@@ -44,6 +46,7 @@
 
 .cart-footer {
   position: absolute;
-  bottom: 30px;
+  bottom: 18px;
   width: 350px;
+  height: 110px;
 }
