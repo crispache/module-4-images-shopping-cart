@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { routes } from "./routes";
-import { CartProvider, GalleryProvider } from "@/core";
+import { CartProvider, GalleryContext, GalleryProvider } from "@/core";
 import { CatGalleryScene, DogGalleryScene } from "@/scenes";
 
 export const AppRouter = () => {
