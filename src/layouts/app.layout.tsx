@@ -26,7 +26,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
   const { gallery, setGallery } = React.useContext(GalleryContext);
   const { cartProducts } = React.useContext(CartContext);
   const navigate = useNavigate();
-  const [isOpenCartPanel, setIsOpenCartPanel] = React.useState<boolean>(false)
+  const [isOpenCartPanel, setIsOpenCartPanel] = React.useState<boolean>(true)
 
   const handelChange = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,

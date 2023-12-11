@@ -19,7 +19,7 @@ export const Cart: React.FC<Props> = (props) => {
 
   return (
     <>
-      <Drawer open={isOpen} onClose={closeCartPanel} anchor="right">
+      <Drawer open={isOpen} onClose={closeCartPanel} anchor="right" variant={ isOpen ? 'permanent' : 'temporary'}>
         <div className="cart-container">
           <CartHeader
             totalCartProducts={cartProducts?.length}
