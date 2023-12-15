@@ -28,10 +28,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
   const { cartProducts, isShowCart, setIsShowCart} = React.useContext(CartContext);
   const navigate = useNavigate();
 
-  const handelChange = (
-    e: React.MouseEvent<HTMLElement, MouseEvent>,
-    value: TypeGallery | null
-  ) => { 
+  const handelChange = (e: React.MouseEvent<HTMLElement, MouseEvent>,value: TypeGallery | null) => { 
     if(value !== null) {
       setGallery(value);
     }
@@ -42,7 +39,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => {
       <AppBar position="static" color="transparent">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            App Gallery
+            Gallery App
           </Typography>
           <IconButton size="medium" onClick={() => setIsShowCart(true) }>
             <Badge badgeContent={cartProducts?.length} color="primary">
